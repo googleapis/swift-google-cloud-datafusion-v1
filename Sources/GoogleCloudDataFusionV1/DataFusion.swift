@@ -47,7 +47,7 @@ public class DataFusionClient: Clients.DataFusionProtocol {
   /// @Snippet(path: "DataFusion_ListAvailableVersions")
   public func listAvailableVersions(
     request: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse {
+  ) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse {
     try await self.inner.listAvailableVersions(request: request, options: options)
   }
 
@@ -59,7 +59,7 @@ public class DataFusionClient: Clients.DataFusionProtocol {
     byItem: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Version, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse in
+      (token: Swift.String) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listAvailableVersions(request: request, options: options)
@@ -72,7 +72,7 @@ public class DataFusionClient: Clients.DataFusionProtocol {
   /// @Snippet(path: "DataFusion_ListInstances")
   public func listInstances(
     request: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse {
+  ) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse {
     try await self.inner.listInstances(request: request, options: options)
   }
 
@@ -83,7 +83,7 @@ public class DataFusionClient: Clients.DataFusionProtocol {
     byItem: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Instance, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse in
+      (token: Swift.String) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse in
       var request = byItem
       request.pageToken = token
       return try await self.listInstances(request: request, options: options)
@@ -96,7 +96,7 @@ public class DataFusionClient: Clients.DataFusionProtocol {
   /// @Snippet(path: "DataFusion_GetInstance")
   public func getInstance(
     request: GetInstanceRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.Instance {
+  ) async throws -> GoogleCloudDataFusionV1.Instance {
     try await self.inner.getInstance(request: request, options: options)
   }
 
@@ -417,7 +417,7 @@ extension Clients {
   public protocol DataFusionProtocol {
     /// See `DataFusionClient.listAvailableVersions`.
     func listAvailableVersions(request: ListAvailableVersionsRequest) async throws
-      -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse
+      -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse
 
     /// See `DataFusionClient.listAvailableVersions`.
     func listAvailableVersions(
@@ -431,7 +431,7 @@ extension Clients {
 
     /// See `DataFusionClient.listInstances`.
     func listInstances(request: ListInstancesRequest) async throws
-      -> GoogleCloudDatafusionV1.ListInstancesResponse
+      -> GoogleCloudDataFusionV1.ListInstancesResponse
 
     /// See `DataFusionClient.listInstances`.
     func listInstances(
@@ -439,7 +439,7 @@ extension Clients {
     ) throws -> any AsyncSequence<Instance, Swift.Error>
 
     /// See `DataFusionClient.getInstance`.
-    func getInstance(request: GetInstanceRequest) async throws -> GoogleCloudDatafusionV1.Instance
+    func getInstance(request: GetInstanceRequest) async throws -> GoogleCloudDataFusionV1.Instance
 
     /// See `DataFusionClient.createInstance`.
     func createInstance(request: CreateInstanceRequest) async throws -> GoogleLongrunning.Operation
@@ -522,7 +522,7 @@ extension Clients {
     /// See `DataFusionClient.listAvailableVersions`.
     func listAvailableVersions(
       request: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse
+    ) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse
 
     /// See `DataFusionClient.listAvailableVersions`.
     func listAvailableVersions(
@@ -532,7 +532,7 @@ extension Clients {
     /// See `DataFusionClient.listInstances`.
     func listInstances(
       request: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse
+    ) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse
 
     /// See `DataFusionClient.listInstances`.
     func listInstances(
@@ -542,7 +542,7 @@ extension Clients {
     /// See `DataFusionClient.getInstance`.
     func getInstance(
       request: GetInstanceRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.Instance
+    ) async throws -> GoogleCloudDataFusionV1.Instance
 
     /// See `DataFusionClient.createInstance`.
     func createInstance(
@@ -609,14 +609,14 @@ extension Clients {
 // Default implementations
 extension Clients.DataFusionProtocol {
   public func listAvailableVersions(request: ListAvailableVersionsRequest) async throws
-    -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse
+    -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse
   {
     try await self.listAvailableVersions(request: request, options: .init())
   }
 
   public func listAvailableVersions(
     request: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse {
+  ) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -630,7 +630,7 @@ extension Clients.DataFusionProtocol {
     byItem: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Version, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse in
+      (token: Swift.String) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
@@ -646,14 +646,14 @@ extension Clients.DataFusionProtocol {
   }
 
   public func listInstances(request: ListInstancesRequest) async throws
-    -> GoogleCloudDatafusionV1.ListInstancesResponse
+    -> GoogleCloudDataFusionV1.ListInstancesResponse
   {
     try await self.listInstances(request: request, options: .init())
   }
 
   public func listInstances(
     request: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse {
+  ) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 
@@ -667,21 +667,21 @@ extension Clients.DataFusionProtocol {
     byItem: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
   ) throws -> any AsyncSequence<Instance, Swift.Error> {
     let listRpc = {
-      (token: Swift.String) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse in
+      (token: Swift.String) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse in
       throw GoogleCloudGax.RequestError.unimplemented
     }
     return GoogleCloudGax.PaginatedResponseSequence(listRpc: listRpc)
   }
 
   public func getInstance(request: GetInstanceRequest) async throws
-    -> GoogleCloudDatafusionV1.Instance
+    -> GoogleCloudDataFusionV1.Instance
   {
     try await self.getInstance(request: request, options: .init())
   }
 
   public func getInstance(
     request: GetInstanceRequest, options: GoogleCloudGax.RequestOptions
-  ) async throws -> GoogleCloudDatafusionV1.Instance {
+  ) async throws -> GoogleCloudDataFusionV1.Instance {
     throw GoogleCloudGax.RequestError.unimplemented
   }
 

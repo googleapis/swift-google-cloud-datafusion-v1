@@ -27,15 +27,15 @@ extension Clients {
   protocol DataFusionStub {
     func listAvailableVersions(
       request: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse
+    ) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse
 
     func listInstances(
       request: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse
+    ) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse
 
     func getInstance(
       request: GetInstanceRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.Instance
+    ) async throws -> GoogleCloudDataFusionV1.Instance
 
     func createInstance(
       request: CreateInstanceRequest, options: GoogleCloudGax.RequestOptions
@@ -80,7 +80,7 @@ extension Clients {
 
     public func listAvailableVersions(
       request: ListAvailableVersionsRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListAvailableVersionsResponse {
+    ) async throws -> GoogleCloudDataFusionV1.ListAvailableVersionsResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -100,12 +100,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudDatafusionV1.ListAvailableVersionsResponse.self, from: data)
+        GoogleCloudDataFusionV1.ListAvailableVersionsResponse.self, from: data)
     }
 
     public func listInstances(
       request: ListInstancesRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.ListInstancesResponse {
+    ) async throws -> GoogleCloudDataFusionV1.ListInstancesResponse {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.parent as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.parent' is not set or is empty")
@@ -125,12 +125,12 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudDatafusionV1.ListInstancesResponse.self, from: data)
+        GoogleCloudDataFusionV1.ListInstancesResponse.self, from: data)
     }
 
     public func getInstance(
       request: GetInstanceRequest, options: GoogleCloudGax.RequestOptions
-    ) async throws -> GoogleCloudDatafusionV1.Instance {
+    ) async throws -> GoogleCloudDataFusionV1.Instance {
       let path = try { () throws -> Swift.String in
         guard let pathVariable0 = request.name as Swift.String?, !pathVariable0.isEmpty else {
           throw GoogleCloudGax.RequestError.binding("'request.name' is not set or is empty")
@@ -145,7 +145,7 @@ extension Clients {
       req.setValue(Clients.clientHeader, forHTTPHeaderField: "X-Goog-Api-Client")
       let (data, _) = try await self.inner.rpc(for: req).get()
       return try GoogleCloudWkt._ProtoJSONDecoder().decode(
-        GoogleCloudDatafusionV1.Instance.self, from: data)
+        GoogleCloudDataFusionV1.Instance.self, from: data)
     }
 
     public func createInstance(
